@@ -9,9 +9,9 @@ package managers
 		}
 		
 		
-		public static function fazLogin(id:uint):Duelist{
-			var duelist:Duelist = new Duelist;
-			if(id == 1){
+		public static function fazLogin(id:String):Duelist{
+			var duelist:Duelist = new Duelist();
+			if(id == "1"){
 				duelist.id = 1;
 				duelist.name = "Wallace";
 			}
