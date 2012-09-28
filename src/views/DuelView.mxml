@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:BorderContainer xmlns:fx="http://ns.adobe.com/mxml/2009" 
+				   xmlns:s="library://ns.adobe.com/flex/spark" 
+				   xmlns:mx="library://ns.adobe.com/flex/mx" width="800" height="450" creationComplete="_creationCompleteHandler(event)">
+	<fx:Script>
+		<![CDATA[
+			import managers.LoginManager;
+			
+			import models.Duelist;
+			
+			import mx.events.FlexEvent;
+			
+			public var duelist:Duelist;
+			
+			protected function _creationCompleteHandler(event:FlexEvent):void
+			{
+				login_button.addEventListener(MouseEvent.CLICK,logar);
+				publish_button.addEventListener(MouseEvent.CLICK,publishFunction);
+				play_button.addEventListener(MouseEvent.CLICK,playFunction);
+			}
+			
+			protected function logar(event:MouseEvent):void
+			{
+				duelist = LoginManager.fazLogin(login_text.text as uint);
+			}
+			
+			protected function publishFunction(event:MouseEvent):void
+			{
+				// TODO Auto-generated method stub
+				
+			}
+			
+			protected function playFunction(event:MouseEvent):void
+			{
+				// TODO Auto-generated method stub
+				
+			}
+			
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<s:Group x="25" y="10" width="200" height="200">
+		<s:TextInput x="62" y="43"/>
+		<s:TextInput x="62" y="73"/>
+		<s:Button id="publish_button" x="61" y="144" label="Publish"/>
+		<s:Button id="play_button" x="61" y="173" label="Play"/>
+		<s:Label id="sala_text" x="10" y="53" text="Sala:"/>
+		<s:Label id="canal_text" x="10" y="83" text="Canal:"/>
+		<s:Button id="login_button" x="61" y="115" label="Logar"/>
+		<s:TextInput id="login_text" x="62" y="10"/>
+		<s:Label x="10" y="20" text="Id:"/>
+	</s:Group>
+</s:BorderContainer>
